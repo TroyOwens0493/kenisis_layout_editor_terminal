@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dvxPt0Va+ew=",
+  "success": true,
+  "projectFilePath": "/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/kenisis_remap_terminal.csproj",
+  "expectedPackageFiles": [
+    "/Users/troyowens/.nuget/packages/bimap/2.0.0/bimap.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,17 @@
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.csproj.AssemblyReference.cache
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.GeneratedMSBuildEditorConfig.editorconfig
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.AssemblyInfoInputs.cache
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.AssemblyInfo.cs
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.csproj.CoreCompileInputs.cache
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/bin/Debug/net8.0/kenisis_remap_terminal
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/bin/Debug/net8.0/kenisis_remap_terminal.deps.json
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/bin/Debug/net8.0/kenisis_remap_terminal.runtimeconfig.json
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/bin/Debug/net8.0/kenisis_remap_terminal.dll
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/bin/Debug/net8.0/kenisis_remap_terminal.pdb
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/bin/Debug/net8.0/BiMap.dll
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_.C9C0CED2.Up2Date
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.dll
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/refint/kenisis_remap_terminal.dll
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.pdb
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/kenisis_remap_terminal.genruntimeconfig.cache
+/Users/troyowens/Desktop/Programming_Docs/kenisis_remap_terminal/obj/Debug/net8.0/ref/kenisis_remap_terminal.dll

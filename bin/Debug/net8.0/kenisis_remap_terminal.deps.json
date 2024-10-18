@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "kenisis_remap_terminal/1.0.0": {
+        "dependencies": {
+          "BiMap": "2.0.0"
+        },
+        "runtime": {
+          "kenisis_remap_terminal.dll": {}
+        }
+      },
+      "BiMap/2.0.0": {
+        "runtime": {
+          "lib/net5.0/BiMap.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "kenisis_remap_terminal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BiMap/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r5xg+cuksa1TOOglfsuOUyD34SoL1MBiJ7dBt+Gvxnsyi7FWMv7IY+6qHza/KXDEBBhCZl+ww7M4yDRHoT+aRw==",
+      "path": "bimap/2.0.0",
+      "hashPath": "bimap.2.0.0.nupkg.sha512"
+    }
+  }
+}
