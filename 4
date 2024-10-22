@@ -186,7 +186,7 @@ namespace HandleUserInteraction
             "Bluetooth select "
         };
         private int _sideToDisplay = new();
-        public int _layerIndex = new();
+        private int _layerIndex = new();
 
 
         //Methods
@@ -195,8 +195,7 @@ namespace HandleUserInteraction
             var layer = keymap[_layerIndex];
             var keyToEditIndex = keyToEdit[0][0][0];
             var keyToEditFunctions = keyToEdit[1][int.Parse(keyToEditIndex)];
-            _keyToEdit[0] = keyToEditIndex;
-            for (int i = 1; i < keyToEditFunctions.Count(); i++)
+            for (int i = 0; i < keyToEditFunctions.Count(); i++)
             {
                 _keyToEdit[i] = keyToEditFunctions[i];
             }
@@ -343,7 +342,6 @@ namespace HandleUserInteraction
             InputOutput inandout = new();
             var keyPresses = keybiMaps.MakeKeyCodeTranslationBiMap();
             var keyActions = keybiMaps.MakeKeyBehaviorTranslationBiMap();
-            _modificationsToMake[0] = _keyToEdit[0];
 
             //Get the type of key press
             Console.Clear();
@@ -359,40 +357,17 @@ namespace HandleUserInteraction
             int indexOfNewKeyPress = (inandout.GetUserInt() - 1);
             _modificationsToMake[1] = _keyPressStrings[indexOfNewKeyPress];
 
-            //Con// Get the type of key action
-            int terminalWidth = Console.WindowWidth;
+            //Get the type of key action
             int terminalHeight = Console.WindowHeight;
-
-            int longestLineLen = _keyCodeStrings.Max(s => s.Length);  // Get the length of the longest string in _keyCodeStrings
-            int columnWidth = longestLineLen + 5;  // Add padding for spacing between columns
-
-            int x = 0;  // Current column position (horizontal)
-            int y = 2;  // Start y at 2 to account for header text
-
+            int longestLineLen = 0;
             Console.Clear();
             Console.WriteLine($"Current action on keypress: {_keyToEdit[2]}");
             Console.WriteLine("Choose what you would like the key to do");
-
             for (int i = 0; i < _keyCodeStrings.Count(); i++)
             {
-                // Print the option in the current position
-                Console.SetCursorPosition(x, y);
                 Console.Write($"{i}. {_keyCodeStrings[i]}");
-
-                y++;  // Move down one line
-
-                // Check if we need to move to the next column (halfway down the terminal)
-                if (y >= (terminalHeight / 2) + 2)  // +2 accounts for the header lines
-                {
-                    y = 2;  // Reset y to start below the headers
-                    x += columnWidth;  // Move x to the next column
-                }
+                Console.SetCursorPosition(0, i + 2);
             }
-            Console.SetCursorPosition(0, (terminalHeight / 2) + 3);
-            Console.WriteLine("Please type a number: ");
-            int indexOfNewKeyAction = inandout.GetUserInt();
-            _modificationsToMake[2] = _keyCodeStrings[indexOfNewKeyAction];
-            Console.WriteLine(_modificationsToMake[0]);
         }
 
         public class InputOutput

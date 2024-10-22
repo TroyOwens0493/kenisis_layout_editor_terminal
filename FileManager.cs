@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 public class FileManager
 {
     public List<List<List<string>>> ParseKeymap()
@@ -40,8 +41,9 @@ public class FileManager
                             var mapName = new List<string>(prevLine.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
                             currentLayer.Add(mapName);
                         }
-
-                        var keys = new List<string>(cleanLine.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+                        var keys = Regex.Split(cleanLine, @"(?=&)")
+                                        .Where(part => !string.IsNullOrWhiteSpace(part))
+                                        .ToList();
                         currentLayer.Add(keys);
                         i++;
                     }
@@ -71,10 +73,14 @@ public class FileManager
 
         for (int i = 0; i < parsedKeyMaps.Count; i++)
         {
-            Console.WriteLine(parsedKeyMaps[i][0][0]);
             parsedKeyMapNames.Add(parsedKeyMaps[i][0][0]);
         }
 
         return parsedKeyMapNames;
+    }
+
+    public void EditKey(List<string> changes, int keymapIndex, List<List<List<string>>> keymap)
+    {
+
     }
 }

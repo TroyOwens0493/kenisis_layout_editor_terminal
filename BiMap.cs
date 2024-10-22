@@ -2,7 +2,7 @@ using BiMap;
 
 public class KeyBehaviorTranslator
 {
-    public static BiMap<string, string> MakeKeyBehaviorTranslationBiMap()
+    public BiMap<string, string> MakeKeyBehaviorTranslationBiMap()
     {
         // Create a new BiMap of type <string, string>
         var keyCodes = new BiMap<string, string>();
@@ -40,7 +40,7 @@ public class KeyBehaviorTranslator
     }
 
 
-    public static BiMap<string, string> MakeKeyCodeTranslationBiMap()
+    public BiMap<string, string> MakeKeyCodeTranslationBiMap()
     {
         // Create a new BiMap of type <string, string>
         var keyCodes = new BiMap<string, string>();
@@ -66,23 +66,23 @@ public class KeyBehaviorTranslator
         keyCodes.AddPair("*", "STAR");
         keyCodes.AddPair("(", "LPAR");
         keyCodes.AddPair(")", "RPAR");
-        keyCodes.AddPair("=", "EQUAL");
+        keyCodes.AddPair("= and +", "EQUAL");
         keyCodes.AddPair("+", "PLUS");
         keyCodes.AddPair("-", "MINUS");
         keyCodes.AddPair("_", "UNDERSCORE");
-        keyCodes.AddPair("/", "SLASH");
+        keyCodes.AddPair("/", "FSLH");
         keyCodes.AddPair("?", "QUESTION");
-        keyCodes.AddPair("\\ and |", "BACKSLASH");
+        keyCodes.AddPair("\\ and |", "BSLH");
         keyCodes.AddPair("|", "PIPE");
         keyCodes.AddPair("Non-US \\ and |", "NON_US_BACKSLASH");
-        keyCodes.AddPair("; and :", "SEMICOLON");
-        keyCodes.AddPair("' and \"", "SINGLE_QUOTE");
+        keyCodes.AddPair("; and :", "SEMI");
+        keyCodes.AddPair("' and \"", "SQT");
         keyCodes.AddPair("\"", "DOUBLE_QUOTES");
         keyCodes.AddPair(",", "COMMA");
         keyCodes.AddPair("<", "LT");
         keyCodes.AddPair(">", "GT");
-        keyCodes.AddPair("[ and {", "LEFT_BRACE");
-        keyCodes.AddPair("] and }", "RIGHT_BRACE");
+        keyCodes.AddPair("[ and {", "LBKT");
+        keyCodes.AddPair("] and }", "RBKT");
         keyCodes.AddPair("` and ~", "GRAVE");
         keyCodes.AddPair("~", "TILDE");
         keyCodes.AddPair("Non-US # and ~", "NON_US_HASH");
@@ -91,21 +91,22 @@ public class KeyBehaviorTranslator
         keyCodes.AddPair("Enter", "ENTER");
         keyCodes.AddPair("Space", "SPACE");
         keyCodes.AddPair("Tab", "TAB");
-        keyCodes.AddPair("Backspace", "BACKSPACE");
-        keyCodes.AddPair("Delete", "DELETE");
+        keyCodes.AddPair("Backspace", "BSPC");
+        keyCodes.AddPair("Delete", "DEL");
         keyCodes.AddPair("Insert", "INSERT");
         keyCodes.AddPair("Home", "HOME");
+        keyCodes.AddPair("End", "END");
         keyCodes.AddPair("Page UP", "PAGE_UP");
         keyCodes.AddPair("Page Down", "PAGE_DOWN");
-        keyCodes.AddPair("Up Arrow", "UP_ARROW");
-        keyCodes.AddPair("Down Arrow", "DOWN_ARROW");
-        keyCodes.AddPair("Left Arrow", "LEFT_ARROW");
-        keyCodes.AddPair("Right Arrow", "RIGHT_ARROW");
+        keyCodes.AddPair("Up Arrow", "UP");
+        keyCodes.AddPair("Down Arrow", "DOWN");
+        keyCodes.AddPair("Left Arrow", "LEFT");
+        keyCodes.AddPair("Right Arrow", "RIGHT");
         keyCodes.AddPair("Application (Context Menu)", "K_APPLICATION");
-        keyCodes.AddPair("Caps Lock", "CAPSLOCK");
+        keyCodes.AddPair("Caps Lock", "CAPS");
         keyCodes.AddPair("Locking Caps Lock", "LOCKING_CAPS");
         keyCodes.AddPair("Scroll Lock", "SCROLLLOCK");
-        keyCodes.AddPair("Locking Num", "LOCKING_NUM");
+        keyCodes.AddPair("Locking Num", "KP_NUM");
         keyCodes.AddPair("Print Screen", "PRINTSCREEN");
         keyCodes.AddPair("Pause/Break", "PAUSE_BREAK");
         keyCodes.AddPair("Alternate Erase", "ALT_ERASE");
@@ -120,14 +121,14 @@ public class KeyBehaviorTranslator
         keyCodes.AddPair("Oper", "OPER");
         keyCodes.AddPair("ExSel", "EXSEL");
         keyCodes.AddPair("Edit Keyboard", "K_EDIT");
-        keyCodes.AddPair("Left Shift", "LEFT_SHIFT");
-        keyCodes.AddPair("Right Shift", "RIGHT_SHIFT");
+        keyCodes.AddPair("Left Shift", "LSHFT");
+        keyCodes.AddPair("Right Shift", "RSHFT");
         keyCodes.AddPair("Left Control", "LEFT_CONTROL");
         keyCodes.AddPair("Right Control", "RIGHT_CONTROL");
         keyCodes.AddPair("Left Alt", "LEFT_ALT");
         keyCodes.AddPair("Right Alt", "RIGHT_ALT");
-        keyCodes.AddPair("Left Windows/Command/Meta", "LEFT_GUI");
-        keyCodes.AddPair("Right Windows/Command/Meta", "RIGHT_GUI");
+        keyCodes.AddPair("Left Command", "LEFT_COMMAND");
+        keyCodes.AddPair("Right Command", "RIGHT_COMMAND");
         keyCodes.AddPair("Numlock and Clear", "KP_NUMLOCK");
         keyCodes.AddPair("Keypad Clear", "KP_CLEAR");
         keyCodes.AddPair("Keypad Enter", "KP_ENTER");
@@ -141,12 +142,25 @@ public class KeyBehaviorTranslator
         keyCodes.AddPair("8", "KP_N8");
         keyCodes.AddPair("9", "KP_N9");
         keyCodes.AddPair("0", "KP_N0");
-        keyCodes.AddPair("+", "KP_PLUS");
-        keyCodes.AddPair("-", "KP_MINUS");
-        keyCodes.AddPair("*", "KP_MULTIPLY");
-        keyCodes.AddPair("/", "KP_DIVIDE");
+        keyCodes.AddPair("F1", "F1");
+        keyCodes.AddPair("F2", "F2");
+        keyCodes.AddPair("F3", "F3");
+        keyCodes.AddPair("F4", "F4");
+        keyCodes.AddPair("F5", "F5");
+        keyCodes.AddPair("F6", "F6");
+        keyCodes.AddPair("F7", "F7");
+        keyCodes.AddPair("F8", "F8");
+        keyCodes.AddPair("F9", "F9");
+        keyCodes.AddPair("F10", "F10");
+        keyCodes.AddPair("F11", "F11");
+        keyCodes.AddPair("F12", "F12");
+        keyCodes.AddPair(" +", "KP_PLUS");
+        keyCodes.AddPair("- ", "KP_MINUS");
+        keyCodes.AddPair("* ", "KP_MULTIPLY");
+        keyCodes.AddPair("/ ", "KP_DIVIDE");
         keyCodes.AddPair("=", "KP_EQUAL");
-        keyCodes.AddPair(".", "KP_DOT");
+        keyCodes.AddPair(".", "DOT");
+        keyCodes.AddPair(". ", "KP_DOT");
         keyCodes.AddPair(",", "KP_COMMA");
         keyCodes.AddPair("Left Parenthesis", "KP_LPAR");
         keyCodes.AddPair("Right Parenthesis", "KP_RPAR");
@@ -171,6 +185,7 @@ public class KeyBehaviorTranslator
         keyCodes.AddPair("Recall Last", "C_CHAN_LAST");
         keyCodes.AddPair("VCR Plus", "C_MEDIA_VCR_PLUS");
         keyCodes.AddPair("Mode Step", "C_MODE_STEP");
+        keyCodes.AddPair("Bluetooth select ", "BT_SEL");
 
         return keyCodes;
     }

@@ -15,8 +15,12 @@ public class Program
             List<string> keymapNames = fileManager.ParseKeymapNames(keymap);
             int userSelection = menu.DisplayMainMenu();
             if (userSelection == 1) {
-                menu.DisplayKeymaps(keymapNames);
-                
+                menu.ChooseKeymaps(keymapNames);
+                menu.ChooseSide();
+                var keyToEdit = menu.DisplayLayout(keymap); 
+                menu.SetKeyToEdit(keyToEdit, keymap);
+                menu.EditKey();
+                fileManager.EditKey(menu._modificationsToMake, menu._layerIndex, keymap);
             } 
             //var keyBehaviorBiMap = BiMap.MakeKeyBehaviorTranslationBiMap();
             //Console.WriteLine("Example Key Behavior Mapping:");
