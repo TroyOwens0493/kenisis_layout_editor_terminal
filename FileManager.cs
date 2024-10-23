@@ -151,6 +151,7 @@ public class FileManager
                 }
             }
         }
+        _finishedFile = lineList;
     }
 
     public void WriteToFile()
