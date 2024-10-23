@@ -20,7 +20,7 @@ public class Program
                 var keyToEdit = menu.DisplayLayout(keymap); 
                 menu.SetKeyToEdit(keyToEdit, keymap);
                 menu.EditKey();
-                fileManager.EditKey(menu._modificationsToMake, menu._layerIndex, keymap);
+                fileManager.EditKey(menu._modificationsToMake, menu._layerIndex, keymap, keymapNames);
             } 
             //var keyBehaviorBiMap = BiMap.MakeKeyBehaviorTranslationBiMap();
             //Console.WriteLine("Example Key Behavior Mapping:");

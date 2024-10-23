@@ -1,6 +1,9 @@
 using System.Text.RegularExpressions;
 public class FileManager
 {
+    //Attributes
+    private string _filePath = "./config/adv360.keymap";
+
     public List<List<List<string>>> ParseKeymap()
     {
         var keymap = new List<List<List<string>>>();
@@ -8,7 +11,7 @@ public class FileManager
         bool isKeymapLine = false;
         int i = 0;
 
-        using (var reader = new StreamReader("./config/adv360.keymap"))
+        using (var reader = new StreamReader(_filePath))
         {
             // Set up vars for iterating
             string? line;
@@ -79,8 +82,74 @@ public class FileManager
         return parsedKeyMapNames;
     }
 
-    public void EditKey(List<string> changes, int keymapIndex, List<List<List<string>>> keymap)
+    public void EditKey(List<string> changes, int keymapIndex, List<List<List<string>>> keymap, List<string> keymapNames)
     {
+        //Make the key edit in the list
+        var keyMapWeAreEditing = keymap[keymapIndex];
+        int currentKeyIndex = 0;
+        Console.WriteLine(changes[0]);
+        for (int i = 0; i < keyMapWeAreEditing.Count(); i++)
+        {
+            var currentLayer = keyMapWeAreEditing[i];
+            for (int j = 0; j < currentLayer.Count(); j++)
+            {
+                if (currentKeyIndex == int.Parse(changes[0]))
+                {
+                    currentLayer[j] = $"{changes[1]} {changes[2]}";
+                    keyMapWeAreEditing[i] = currentLayer;
+                    break;
+                }
+            }
+            currentKeyIndex++;
+        }
 
+        // Read all lines from the keymap file into an array
+        string[] lines = File.ReadAllLines(_filePath);
+
+        // Convert the array to a List<string>
+        List<string> lineList = new List<string>(lines);
+        bool isKeyMapLine = false;
+        int layerLineCount = 0;
+
+        for (int i = 0; i < lineList.Count(); i++)//Loop through each line of the map file
+        {
+            layerLineCount++;
+
+            if (lineList[i].Trim().StartsWith(keymapNames[keymapIndex]))
+            {
+                layerLineCount = 0;
+                isKeyMapLine = true;
+                continue;
+            }
+            else if (isKeyMapLine)
+            {
+                if (layerLineCount < keyMapWeAreEditing.Count() + 1)//Loop through all the keys in the keymap we are editing
+                {
+                    lineList[i] = " "; // Clear the line for the new key mappings
+
+                    if (layerLineCount == 1)
+                    {
+                        lineList[i] = keymapNames[keymapIndex] + "{";
+                    }
+                    else if (layerLineCount == 2)
+                    {
+                        lineList[i] = "bindings = <";
+                    }
+                    else
+                    {
+
+                        foreach (string word in keyMapWeAreEditing[layerLineCount - 2])
+                        {
+                            lineList[i] += $" {word.Trim()}";
+                        }
+                    }
+                }
+                else
+                {
+                    isKeyMapLine = false; // Reset when finished
+                }
+            }
+            Console.WriteLine(lineList[i]);
+        }
     }
 }

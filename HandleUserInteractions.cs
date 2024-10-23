@@ -357,7 +357,7 @@ namespace HandleUserInteraction
 
             Console.WriteLine("Please type a number");
             int indexOfNewKeyPress = (inandout.GetUserInt() - 1);
-            _modificationsToMake[1] = _keyPressStrings[indexOfNewKeyPress];
+            _modificationsToMake[1] = keyActions.GetLeftToRight(_keyPressStrings[indexOfNewKeyPress]);
 
             //Con// Get the type of key action
             int terminalWidth = Console.WindowWidth;
@@ -377,7 +377,7 @@ namespace HandleUserInteraction
             {
                 // Print the option in the current position
                 Console.SetCursorPosition(x, y);
-                Console.Write($"{i}. {_keyCodeStrings[i]}");
+                Console.Write($"{i + 1}. {_keyCodeStrings[i]}");
 
                 y++;  // Move down one line
 
@@ -390,9 +390,8 @@ namespace HandleUserInteraction
             }
             Console.SetCursorPosition(0, (terminalHeight / 2) + 3);
             Console.WriteLine("Please type a number: ");
-            int indexOfNewKeyAction = inandout.GetUserInt();
-            _modificationsToMake[2] = _keyCodeStrings[indexOfNewKeyAction];
-            Console.WriteLine(_modificationsToMake[0]);
+            int indexOfNewKeyAction = (inandout.GetUserInt() - 1);
+            _modificationsToMake[2] = keyPresses.GetLeftToRight(_keyCodeStrings[indexOfNewKeyAction]);
         }
 
         public class InputOutput
