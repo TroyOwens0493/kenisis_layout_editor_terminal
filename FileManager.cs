@@ -3,6 +3,7 @@ public class FileManager
 {
     //Attributes
     private string _filePath = "./config/adv360.keymap";
+    private List<string> _finishedFile = new();
 
     public List<List<List<string>>> ParseKeymap()
     {
@@ -149,7 +150,17 @@ public class FileManager
                     isKeyMapLine = false; // Reset when finished
                 }
             }
-            Console.WriteLine(lineList[i]);
+        }
+    }
+
+    public void WriteToFile()
+    {
+        using (var writer = new StreamWriter(_filePath))
+        {
+            foreach (string line in _finishedFile)
+            {
+                writer.WriteLine(line);
+            }
         }
     }
 }

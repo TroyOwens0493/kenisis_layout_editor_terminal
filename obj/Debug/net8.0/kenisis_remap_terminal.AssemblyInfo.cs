@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kenisis_remap_terminal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f50662ddef26ca9509a2e5f970f0bc5fe79b3828")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e400d193b4faf8f0ad52bc6831e9542381c8c42")]
 [assembly: System.Reflection.AssemblyProductAttribute("kenisis_remap_terminal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kenisis_remap_terminal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -21,6 +21,7 @@ public class Program
                 menu.SetKeyToEdit(keyToEdit, keymap);
                 menu.EditKey();
                 fileManager.EditKey(menu._modificationsToMake, menu._layerIndex, keymap, keymapNames);
+                fileManager.WriteToFile();
             } 
             //var keyBehaviorBiMap = BiMap.MakeKeyBehaviorTranslationBiMap();
             //Console.WriteLine("Example Key Behavior Mapping:");
